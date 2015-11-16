@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET", ".NET", "{578252B4-76A2-4B96-8CE0-35831C69FDC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStatsApi.Sdk", "Sdk\GameStatsApi.Sdk.csproj", "{F2EC3E2C-3C39-4482-92ED-AA4C1EAC6149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BD20FC25-AC95-4653-ACCE-81171FA46531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStatsApi.Sdk.Tester", "GameStatsApi.Sdk.Tester\GameStatsApi.Sdk.Tester.csproj", "{F6ED2FB7-CE2D-48C5-98D2-3BDE973E9949}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Html5", "Html5", "{87B8EB8F-2EF4-4B11-9552-7644E14A23F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStatsApi.Html", "GameStatsApi.Html\GameStatsApi.Html.csproj", "{CEDA0693-5807-4BDC-8DBC-83A048C6A89B}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2EC3E2C-3C39-4482-92ED-AA4C1EAC6149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2EC3E2C-3C39-4482-92ED-AA4C1EAC6149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2EC3E2C-3C39-4482-92ED-AA4C1EAC6149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2EC3E2C-3C39-4482-92ED-AA4C1EAC6149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6ED2FB7-CE2D-48C5-98D2-3BDE973E9949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6ED2FB7-CE2D-48C5-98D2-3BDE973E9949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6ED2FB7-CE2D-48C5-98D2-3BDE973E9949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6ED2FB7-CE2D-48C5-98D2-3BDE973E9949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEDA0693-5807-4BDC-8DBC-83A048C6A89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDA0693-5807-4BDC-8DBC-83A048C6A89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDA0693-5807-4BDC-8DBC-83A048C6A89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDA0693-5807-4BDC-8DBC-83A048C6A89B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F2EC3E2C-3C39-4482-92ED-AA4C1EAC6149} = {578252B4-76A2-4B96-8CE0-35831C69FDC2}
+		{F6ED2FB7-CE2D-48C5-98D2-3BDE973E9949} = {BD20FC25-AC95-4653-ACCE-81171FA46531}
+		{CEDA0693-5807-4BDC-8DBC-83A048C6A89B} = {87B8EB8F-2EF4-4B11-9552-7644E14A23F2}
+	EndGlobalSection
+EndGlobal

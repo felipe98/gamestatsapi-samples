@@ -1,0 +1,10 @@
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\GameStatsApi.Sdk.Tester.exe.config
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\GameStatsApi.Sdk.Tester.exe
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\GameStatsApi.Sdk.Tester.pdb
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\GameStatsApi.Sdk.dll
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\GameStatsApi.Sdk.pdb
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\obj\Debug\GameStatsApi.Sdk.Tester.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\obj\Debug\GameStatsApi.Sdk.Tester.exe
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\GameStatsApi.Sdk.Tester\obj\Debug\GameStatsApi.Sdk.Tester.pdb

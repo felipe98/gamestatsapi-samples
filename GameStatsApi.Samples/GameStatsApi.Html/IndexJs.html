@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Javascript Sample</title>
+</head>
+<body>
+    <script src="Scripts/gamestats.js"></script>
+    <script type="text/javascript">
+        var api = new gameStatsApi();
+        api.init('7467E9AvBnaGKunAByul4JuHO', 'ppAzo4Pxgp5eSH94SfMYAXg9EHerXaUFaLspJQnMFPTX70qdCqysnO48ybS1owhzUGt75G/aEdv');
+     
+        var area = new Area();
+        area.Area = 'Js Example';
+        area.Difficulty = 'Normal';
+        area.Meta = JSON.stringify({ score: 3000 });    // Meta can store xml/json/plaintext but all in string form.
+        area.PerctCompleted = 4.5;
+        area.Platform = 'Html';
+        area.PlayerId = 'felipe.ramos@unlimited-software.com';
+        area.ProjectId = 1; 
+        
+        try {
+            api.areaEvent(area, function (response) {
+                alert(JSON.stringify(response));
+            });
+          
+        }
+        catch (Ex) {
+            alert(Ex);
+        }
+    </script>
+</body>
+</html>

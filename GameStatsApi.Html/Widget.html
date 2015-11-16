@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Widget Example</title>
+</head>
+<body>
+    <table>
+        <tbody data-bind="foreach: areaStats">
+            <tr>
+                <td data-bind="text: project"></td>
+                <td data-bind="text: area"></td>
+                <td data-bind="text: platform"></td>
+                <td data-bind="text: difficulty"></td>
+                <td data-bind="text: meta"></td>
+                <td data-bind="text: created"></td>
+                <td data-bind="text: perctCompleted"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/knockout-3.3.0.js"></script>
+    <script type="text/javascript">
+        var viewModel = function () {
+            var self = this;
+
+            self.areaStats = ko.observableArray();
+
+            self.loadStats = function () {
+                $.get("https://gamestatsapi.com/api/widget/areaevents" + self.getQs(), function (data) {
+                    //alert(JSON.stringify(data));
+                    self.areaStats(data);
+                });
+            };
+            self.getQs = function () {
+                return '?apikey=7467E9AvBnaGKunAByul4JuHO&token=ppAzo4Pxgp5eSH94SfMYAXg9EHerXaUFaLspJQnMFPTX70qdCqysnO48ybS1owhzUGt75G/aEdv&projectId=1';
+            };
+        }
+
+        var instance;
+
+        $(function () {
+            instance = new viewModel();
+            instance.loadStats();
+
+            ko.applyBindings(instance);
+        });
+
+    </script>
+</body>
+</html>

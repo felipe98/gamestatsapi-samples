@@ -1,0 +1,7 @@
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\bin\Debug\GameStatsApi.Sdk.dll
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\bin\Debug\GameStatsApi.Sdk.pdb
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\obj\Debug\GameStatsApi.Sdk.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\obj\Debug\GameStatsApi.Sdk.dll
+C:\Users\Felipe\Desktop\Unlimited Software Group\GameStatsApi.Samples\Sdk\obj\Debug\GameStatsApi.Sdk.pdb
