@@ -6,7 +6,10 @@
     CaptureSequence: { url: 'api/media/capturesequence' },
     TopSnapshots: { url: 'api/media/selecttop' },
     AchievementUnlock: { url: 'api/achievement/unlock' },
-    AchievementTimeline: { url: 'api/achievement/timeline' }
+    AchievementTimeline: { url: 'api/achievement/timeline' },
+    GetProject: { url: 'api/project/get' },
+    GetAllProjects: { url: 'api/project/all' },
+    CreateProject: { url: 'api/project/create' }
 };
 var GameStatsApi = function () {
     this.apiKey = '';
@@ -125,8 +128,30 @@ GameStatsApi.prototype = {
     downloaded: function (data, callback) {
         this.record(Endpoints.Downloaded.url, data, callback);
     },
+    downloadedLong: function (projectId, playerId, meta, platform, callback) {
+        var obj = new Downloaded();
+        obj.Meta = meta;
+        obj.Platform = platform;
+        obj.PlayerId = playerId;
+        obj.ProjectId = projectId;
+
+        this.downloaded(obj, callback);
+    },
     general: function (data, callback) {
         this.record(Endpoints.General, data, callback);
+    },
+    generalLong: function (projectId, playerId, areaName, meta, platform, difficulty, perctCompleted, totalHours, callback) {
+        var obj = new General();
+        obj.Meta = meta;
+        obj.Platform = platform;
+        obj.PlayerId = projectId;
+        obj.ProjectId = playerId;
+        obj.AreaName = areaName;
+        obj.Difficulty = difficulty;
+        obj.PerctCompleted = perctCompleted;
+        obj.TotalHours = totalHours;
+
+        this.general(obj, callback);
     },
     custom: function (data, callback) {
         this.record(Endpoints.Custom, data, callback);
@@ -139,21 +164,29 @@ GameStatsApi.prototype = {
     },
     topSnapshots: function (projectId, callback) {
         this.getHelper(this.baseUrl + Endpoints.TopSnapshots.url + this.getAuth() + '&projectId=' + projectId, callback);
+    },
+    getSnapshots: function (projectId, top, callback) {
+        this.getHelper(this.baseUrl + Endpoints.TopSnapshots.url + this.getAuth() + '&projectId=' + projectId + '&top=' + top, callback);
+    },
+    getProject: function (projectId, callback) {
+        this.getHelper(this.baseUrl + Endpoints.GetProject.url + this.getAuth() + '&projectId' + projectId, callback);
+    },
+    getAllProject: function (callback) {
+        this.getHelper(this.baseUrl + Endpoints.GetAllProjects.url + this.getAuth(), callback);
+    },
+    createProject: function (data, callback) {
+        this.record(Endpoints.CreateProject.url, data, callback);
+    },
+    createProjectLong: function (name, platforms, callback) {
+        var p = new Project();
+        p.Name = name;
+        p.Platforms = platforms;
+
+        this.createProject(p, callback);
     }
 };
 
 // Models
-var Area = function () {
-    var self = this;
-
-    this.Meta = '';
-    this.Platform = '';
-    this.PlayerId = '';
-    this.ProjectId = '';
-    this.Area = '';
-    this.Difficulty = '';
-    this.PerctCompleted = 0;
-};
 var General = function () {
     var self = this;
 
@@ -184,6 +217,10 @@ var Snapshot = function () {
     this.IsPublic = true;
     this.Data = ''; // Image bytes encoded as a base64 string.
 };
+var Project = function () {
+    this.Name = '';
+    this.Platforms = '';
+};
 var ResponseObject = function () {
     var self = this;
 
@@ -192,6 +229,10 @@ var ResponseObject = function () {
     this.message = '';
 
 };
+
+/*
+ * This helper needs to be re-written and streamline the helper functions into the object for better manipulation.
+ */
 var SequenceHelper = function () {
     this.currentFrame = 0;
     this.frameLimit = 25;
@@ -200,6 +241,8 @@ var SequenceHelper = function () {
     this.elapsed = 0
     this.last = null
     this.meta = '';
+    this.projectId = -1;
+    this.playerId = '';
 
     this.setFrameReady = function () {
         var now = new Date();
@@ -240,8 +283,8 @@ var SequenceHelper = function () {
         var data = {
             SequenceData: seq,
             Meta: this.meta,
-            PlayerId: 'felipe.ramos@unlimited-software.com',
-            ProjectId: 1
+            PlayerId: this.playerId,
+            ProjectId: this.projectId
         };
 
         return data;
