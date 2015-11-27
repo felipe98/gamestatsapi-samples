@@ -114,7 +114,16 @@ namespace GameStatsApi.Sdk.Concrete
 
         public GenericResponse DownloadedEventBasicAuth(DownloadedRequest request)
         {
-            throw new NotImplementedException();
+            using (var client = new WebClient())
+            {
+                client.Headers.Add("Content-Type", "application/json");
+                client.Headers[HttpRequestHeader.Authorization] = string.Format("Basic {0}", GetAuthHeader());
+
+                var json = client.UploadString(string.Format("{0}/events/downloaded", BaseEndpoint),
+                    JsonConvert.SerializeObject(request));
+
+                return JsonConvert.DeserializeObject<GenericResponse>(json);
+            }
         }
 
         public GenericResponse GeneralEventBasicAuth(GeneralRequest request)
